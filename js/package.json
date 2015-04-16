@@ -1,0 +1,15 @@
+{
+  "name": "leetcode-js",
+  "version": "0.0.0",
+  "description": "My LeetCode solutions using JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/.bin/mocha"
+  },
+  "author": "xcatliu <xcatliu@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "glob": "^5.0.5",
+    "mocha": "^2.2.4"
+  }
+}
