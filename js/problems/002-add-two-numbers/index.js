@@ -27,6 +27,7 @@ var addTwoNumbers = module.exports = function(listA, listB) {
   return result;
 };
 
+// You should comment the following lines to path the leetcode tests.
 function ListNode(val) {
   this.val = val;
   this.next = null;
