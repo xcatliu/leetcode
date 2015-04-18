@@ -1,4 +1,8 @@
 LeetCode
 ===
 
-My LeetCode Solutions.
+# Test
+
+```
+npm test
+```
