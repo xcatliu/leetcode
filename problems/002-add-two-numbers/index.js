@@ -3,17 +3,17 @@
 var addTwoNumbers = module.exports = function(listA, listB) {
   var tmpA = listA;
   var tmpB = listB;
-  var result, tmpNode, up, sum;
-  up = 0;
+  var result, tmpNode, carry, sum;
+  carry = 0;
   while (tmpA !== null || tmpB !== null) {
-    sum = (tmpA === null ? 0 : tmpA.val) + (tmpB === null ? 0 : tmpB.val) + up;
+    sum = (tmpA === null ? 0 : tmpA.val) + (tmpB === null ? 0 : tmpB.val) + carry;
     if (!tmpNode) {
       tmpNode = result = new ListNode(sum % 10);
     } else {
       tmpNode.next = new ListNode(sum % 10);
       tmpNode = tmpNode.next;
     }
-    up = sum > 9 ? 1 : 0;      
+    carry = sum > 9 ? 1 : 0;
     if (tmpA !== null) {
       tmpA = tmpA.next;
     }
@@ -21,7 +21,7 @@ var addTwoNumbers = module.exports = function(listA, listB) {
       tmpB = tmpB.next;
     }
   }
-  if (up === 1) {
+  if (carry === 1) {
     tmpNode.next = new ListNode(1);
   }
   return result;
