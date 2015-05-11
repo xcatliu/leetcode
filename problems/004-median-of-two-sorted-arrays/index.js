@@ -1,5 +1,29 @@
 // https://leetcode.com/problems/median-of-two-sorted-arrays/
 
 var findMedianSortedArrays = module.exports = function(nums1, nums2) {
-  return nums1;
+  var i = 0;
+  var j = 0;
+  var result = [];
+  var nums1Length = nums1.length;
+  var nums2Length = nums2.length;
+  while ( i < nums1Length && j < nums2Length ) {
+    if ( i === nums1Length ) {
+      result.push(nums2[j]);
+      j = j + 1;
+      continue;
+    }
+    if ( j === nums2Length ) {
+      result.push(nums1[i]);
+      i = i + 1;
+      continue;
+    }
+    if ( nums1[i] < nums2[j] ) {
+      result.push(nums1[i]);
+      i = i + 1;
+    } else {
+      result.push(nums2[j]);
+      j = j + 1;
+    }
+  }
+  return result;
 };
