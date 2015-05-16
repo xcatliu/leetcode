@@ -43,7 +43,7 @@ function findMedian(array) {
   if (arrayLength === 1) {
     return array[0];
   }
-  var medianIndex = arrayLength / 2;
+  var medianIndex = (arrayLength - 1) / 2;
   var floor = Math.floor(medianIndex);
   if (floor === medianIndex) {
     return array[medianIndex];
