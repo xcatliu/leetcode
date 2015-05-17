@@ -16,18 +16,16 @@ function merge(nums1, nums2) {
   if (nums2Length === 0) {
     return nums1;
   }
-  while ( i < nums1Length && j < nums2Length ) {
-    if ( i === nums1Length ) {
-      result.push(nums2[j]);
-      j = j + 1;
-      continue;
+  while (true) {
+    if (i === nums1Length) {
+      result = result.concat(nums2.slice(j));
+      break;
     }
-    if ( j === nums2Length ) {
-      result.push(nums1[i]);
-      i = i + 1;
-      continue;
+    if (j === nums2Length) {
+      result = result.concat(nums1.slice(i));
+      break;
     }
-    if ( nums1[i] < nums2[j] ) {
+    if (nums1[i] < nums2[j]) {
       result.push(nums1[i]);
       i = i + 1;
     } else {
