@@ -38,9 +38,6 @@ function merge(nums1, nums2) {
 
 function findMedian(array) {
   var arrayLength = array.length;
-  if (arrayLength === 1) {
-    return array[0];
-  }
   var medianIndex = (arrayLength - 1) / 2;
   var floor = Math.floor(medianIndex);
   if (floor === medianIndex) {
