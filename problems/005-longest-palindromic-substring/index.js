@@ -6,36 +6,28 @@
  * and there exists one unique longest palindromic substring.
  */
 
-/**
- * 相当于将 s 字符之间插入 #
- * banana => #b#a#n#a#n#a#
- * abba => #a#b#b#a#
- * abcd => #a#b#c#d#
- * 这样处理的好处是 aba 和 abba 的两种情况可以一起处理
- */
-function get(s, i) {
-  if (i % 2 === 0) return '#';
-  return s[(i - 1) / 2];
-}
-
 var longestPalindromicSubstring = module.exports = function(s) {
-  var length = s.length;
-  if (length == 0) return '';
+  if (s.length === 0) return '';
+  /**
+   * 将 s 字符之间插入 #
+   * banana => #b#a#n#a#n#a#
+   * abba => #a#b#b#a#
+   * abcd => #a#b#c#d#
+   * 这样处理的好处是 aba 和 abba 的两种情况可以一起处理
+   */
+  var insertedS = '#' + s.split('').join('#') + '#';
+  var length = insertedS.length;
   var result;
   var longest = 0;
-  // 2 * length + 1 是 #b#a#n#a#n#a# 的长度
-  for (var i = 1; i < 2 * length; i++) {
+  for (var i = 1; i < length - 1; i++) {
     // count 表示以当前字符为中心的回文字符的长度
-    var count = 0;
     var j = 1;
-    while (i - j >= 0 && i + j <= 2 * length && get(s, i - j) === get(s, i + j)) {
-      count++;
+    while (i - j >= 0 && i + j <= length - 1 && insertedS[i - j] === insertedS[i + j]) {
       j++;
     }
-    console.log(i, count);
-    if (count > longest) {
-      result = s.slice((i - 1) / 2 - count, count);
-      longest = count;
+    if (j - 1 > longest) {
+      result = insertedS.substr(i - j + 1, j * 2 - 1).replace(/#/g, '');
+      longest = j - 1;
     }
   }
   return result;
