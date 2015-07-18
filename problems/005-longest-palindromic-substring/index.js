@@ -17,17 +17,17 @@ var longestPalindromicSubstring = module.exports = function(s) {
    */
   var insertedS = '#' + s.split('').join('#') + '#';
   var length = insertedS.length;
-  var result;
-  var longest = 0;
+  var result = '';
   for (var i = 1; i < length - 1; i++) {
-    // count 表示以当前字符为中心的回文字符的长度
+    // j 表示往左走和往右走的长度
     var j = 1;
+    // 当两边的字符相同 j++
     while (i - j >= 0 && i + j <= length - 1 && insertedS[i - j] === insertedS[i + j]) {
       j++;
     }
-    if (j - 1 > longest) {
+    // j - 1 正好就是回文字符串的长度
+    if (j - 1 > result.length) {
       result = insertedS.substr(i - j + 1, j * 2 - 1).replace(/#/g, '');
-      longest = j - 1;
     }
   }
   return result;
