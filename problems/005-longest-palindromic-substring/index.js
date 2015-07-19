@@ -6,7 +6,7 @@
  * and there exists one unique longest palindromic substring.
  */
 
-var longestPalindromicSubstring = module.exports = function(s) {
+var longestPalindrome = module.exports = function(s) {
   if (s.length === 0) return '';
   /**
    * 将 s 字符之间插入 #
