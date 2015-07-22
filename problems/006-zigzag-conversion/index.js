@@ -28,5 +28,36 @@
  * @return {string}
  */
 var convert = module.exports = function(s, numRows) {
-
+  var sMatrix = [];
+  for (var i = 0; i < numRows; i++) {
+    sMatrix[i] = [];
+  }
+  var sLength = s.length;
+  var i = 0;
+  var j = 0;
+  // downward
+  var downward = true;
+  for (var k = 0; k < sLength; k++) {
+    sMatrix[i][j] = s[k];
+    if (downward) {
+      i++;
+      // touched bottom
+      if (i === numRows - 1) {
+        downward = false;
+      }
+    } else {
+      i--;
+      j++;
+      // touched top
+      if (i === 0) {
+        downward = true;
+      }
+    }
+  }
+  var result = sMatrix.map(function(row) {
+    return row.filter(function(item) {
+      return !!item;
+    }).join('');
+  }).join('');
+  return result;
 };
