@@ -28,12 +28,14 @@
  * @return {string}
  */
 var convert = module.exports = function(s, numRows) {
+  if (s.length <= 2) return s;
+  if (numRows === 1) return s;
   var sMatrix = [];
   for (var i = 0; i < numRows; i++) {
     sMatrix[i] = [];
   }
   var sLength = s.length;
-  var i = 0;
+  i = 0;
   var j = 0;
   // downward
   var downward = true;
