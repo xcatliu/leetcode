@@ -22,28 +22,28 @@
  */
 
 /**
- * @param {number} x
+ * @param {string} s
+ * @param {string} p
  * @return {boolean}
  */
-var isPalindrome = module.exports = function (x) {
-  if (x < 0) return false;
-  if (x < 10) return true;
-  // get the length of the number
-  var numLength = Math.floor(Math.log10(x)) + 1;
-  // compare halfNumLength times
-  var halfNumLength = Math.floor(numLength / 2);
-  var highDigital;
-  var lowDigital;
-  for (var i = 0; i < halfNumLength; i++) {
-    // get the low ist digital
-    // TODO Math.pow runs too many times, it can be optimized
-    lowDigital = (Math.floor(x / Math.pow(10, i))) % 10;
-    // get the high ist digital
-    highDigital = Math.floor((x % Math.pow(10, numLength - i)) / Math.pow(10, numLength - i - 1));
-    // if they are equal, them x is not a palindrome number
-    if (lowDigital !== highDigital) {
-      return false;
-    }
+var isMatch = module.exports = function (s, p) {
+  var sLength = s.length;
+  var pLength = p.length;
+  if (pLength === 0) return sLength === 0;
+  if (pLength === 1) {
+    if (sLength !== 1) return false;
+    if (p === '.') return true;
+    return s === p;
   }
-  return true;
+  if (p[1] !== '*') {
+    if (sLength === 0) return false;
+    if (s[0] !== p[0] && p[0] !== '.') return false;
+    return isMatch(s.slice(1), p.slice(1));
+  }
+  if (isMatch(s, p.slice(2))) return true;
+  for (var i = 0; i < sLength; i++) {
+    if (s[i] !== p[0] && p[0] !== '.') return false;
+    if (isMatch(s.slice(i + 1), p.slice(2))) return true;
+  }
+  return false;
 };
