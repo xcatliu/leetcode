@@ -18,11 +18,18 @@
  */
 
 var twoSum = module.exports = function (numbers, target) {
+  // Use a hash to store value-to-index pairs
   var hash = numbers.reduce(function (prev, item, index) {
     if (prev[item] === undefined) {
       prev[item] = index;
       return prev;
     }
+    /**
+     * Maybe there are two same numbers, for example:
+     * Input: numbers={2, 5, 5, 7}, target = 10
+     * Output: index1=1, index2=2
+     * So we save the index array
+     */
     prev[item] = [prev[item], index];
     return prev;
   }, {});
