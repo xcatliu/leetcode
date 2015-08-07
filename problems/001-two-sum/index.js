@@ -34,11 +34,14 @@ var twoSum = module.exports = function (numbers, target) {
     return prev;
   }, {});
   var i;
+  // Loop over hash
   for (i in hash) {
+    // If hash[i] is an array, then check if i * 2 equals to target
     if (hash[i] instanceof Array && i * 2 === target) {
       return [hash[i][0] + 1, hash[i][1] + 1].sort(function (a, b) {
         return a - b;
       });
+    // Check if hash[target - 1] is undefined, only take O(1) time complexity
     } else if (hash[target - i] !== undefined) {
       return [hash[i] + 1, hash[target - i] + 1].sort(function (a, b) {
         return a - b;

@@ -1,9 +1,12 @@
 // https://leetcode.com/problems/add-two-numbers/
 
-var addTwoNumbers = module.exports = function(listA, listB) {
+var addTwoNumbers = module.exports = function (listA, listB) {
   var tmpA = listA;
   var tmpB = listB;
-  var result, tmpNode, carry, sum;
+  var result;
+  var tmpNode;
+  var carry;
+  var sum;
   carry = 0;
   while (tmpA !== null || tmpB !== null) {
     sum = (tmpA === null ? 0 : tmpA.val) + (tmpB === null ? 0 : tmpB.val) + carry;
