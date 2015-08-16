@@ -3,10 +3,11 @@ function ListNode(val) {
   this.next = null;
 }
 
-ListNode.createListFromString = function(string) {
+ListNode.createListFromString = function (string) {
   var numbers = string.split('').map(Number);
-  var result, tmp;
-  numbers.forEach(function(number, index) {
+  var result;
+  var tmp;
+  numbers.forEach(function (number, index) {
     if (index === 0) {
       result = new ListNode(numbers[0]);
       return;
@@ -18,7 +19,7 @@ ListNode.createListFromString = function(string) {
   return result;
 };
 
-ListNode.transformListToString = function(list) {
+ListNode.transformListToString = function (list) {
   var result = [];
   var tmp = list;
   while (tmp !== null) {
