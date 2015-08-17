@@ -17,9 +17,14 @@
  * Output: index1=1, index2=2
  */
 
-var twoSum = module.exports = function (numbers, target) {
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = module.exports = function (nums, target) {
   // Use a hash to store value-to-index pairs
-  var hash = numbers.reduce(function (prev, item, index) {
+  var hash = nums.reduce(function (prev, item, index) {
     if (prev[item] === undefined) {
       prev[item] = index;
       return prev;
