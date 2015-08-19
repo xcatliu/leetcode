@@ -1,11 +1,12 @@
 // https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
-var lengthOfLongestSubstring = module.exports = function(s) {
+var lengthOfLongestSubstring = module.exports = function (s) {
   if (s.length === 0) {
     return 0;
   }
   var result = 1;
-  var j, k;
+  var j;
+  var k;
   var i = 0;
   for (j = i + 1; j < s.length; j++) {
     for (k = i; k < j; k++) {
