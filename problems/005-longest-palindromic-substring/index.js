@@ -6,6 +6,10 @@
  * and there exists one unique longest palindromic substring.
  */
 
+/**
+ * @param {string} s
+ * @return {string}
+ */
 var longestPalindrome = module.exports = function (s) {
   if (s.length === 0) return '';
   /**
