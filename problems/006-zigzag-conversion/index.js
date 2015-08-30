@@ -28,11 +28,12 @@
  * @param {number} numRows
  * @return {string}
  */
-var convert = module.exports = function(s, numRows) {
+var convert = module.exports = function (s, numRows) {
   if (s.length <= 2) return s;
   if (numRows === 1) return s;
   var sMatrix = [];
-  for (var i = 0; i < numRows; i++) {
+  var i;
+  for (i = 0; i < numRows; i++) {
     sMatrix[i] = [];
   }
   var sLength = s.length;
@@ -57,8 +58,8 @@ var convert = module.exports = function(s, numRows) {
       }
     }
   }
-  var result = sMatrix.map(function(row) {
-    return row.filter(function(item) {
+  var result = sMatrix.map(function (row) {
+    return row.filter(function (item) {
       return !!item;
     }).join('');
   }).join('');
