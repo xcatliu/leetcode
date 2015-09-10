@@ -15,7 +15,6 @@
  * @param {number[]} height
  * @return {number}
  */
-
 var maxArea = module.exports = function (height) {
   var heightLength = height.length;
   if (heightLength < 2) return 0;
