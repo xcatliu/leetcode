@@ -1,34 +1,34 @@
 module.exports = [
   {
-    input: ['aa a'],
+    input: ['aa', 'a'],
     output: false,
   },
   {
-    input: ['aa aa'],
+    input: ['aa', 'aa'],
     output: true,
   },
   {
-    input: ['aaa aa'],
+    input: ['aaa', 'aa'],
     output: false,
   },
   {
-    input: ['aa a*'],
+    input: ['aa', 'a*'],
     output: true,
   },
   {
-    input: ['aa .*'],
+    input: ['aa', '.*'],
     output: true,
   },
   {
-    input: ['ab .*'],
+    input: ['ab', '.*'],
     output: true,
   },
   {
-    input: ['aab c*a*b'],
+    input: ['aab', 'c*a*b'],
     output: true,
   },
   {
-    input: ['bbba .*a*a'],
+    input: ['bbba', '.*a*a'],
     output: true,
   },
 ];
