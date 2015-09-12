@@ -73,5 +73,4 @@ var maxArea = module.exports = function (height) {
     return Math.abs(ltr[ltrIndex].x - rtl[rtlIndex].x)
       * Math.min(ltr[ltrIndex].height, rtl[rtlIndex].height);
   }
-
 };
