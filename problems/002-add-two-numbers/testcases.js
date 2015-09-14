@@ -1,39 +1,20 @@
-function ListNode(val) {
-  this.val = val;
-  this.next = null;
-}
-
-function generateList(num) {
-  var numbers = num.toStrint().split('').map(Number);
-  var result;
-  var tmp;
-  numbers.forEach(function (number, index) {
-    if (index === 0) {
-      result = new ListNode(numbers[0]);
-      return;
-    }
-    tmp = new ListNode(numbers[index]);
-    tmp.next = result;
-    result = tmp;
-  });
-  return result;
-}
+var ListNode = require('./ListNode');
 
 module.exports = [
   {
-    input: [generateList(342), generateList(465)],
-    output: [generateList(807)],
+    input: [ListNode.generateList(342), ListNode.generateList(465)],
+    output: ListNode.generateList(807),
   },
   {
-    input: [generateList(999), generateList(888)],
-    output: [generateList(1887)],
+    input: [ListNode.generateList(999), ListNode.generateList(888)],
+    output: ListNode.generateList(1887),
   },
   {
-    input: [generateList(81), generateList(0)],
-    output: [generateList(81)],
+    input: [ListNode.generateList(81), ListNode.generateList(0)],
+    output: ListNode.generateList(81),
   },
   {
-    input: [generateList(0), generateList(0)],
-    output: [generateList(0)],
+    input: [ListNode.generateList(0), ListNode.generateList(0)],
+    output: ListNode.generateList(0),
   },
 ];
