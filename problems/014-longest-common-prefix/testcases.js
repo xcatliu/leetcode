@@ -1,5 +1,3 @@
-// http://literacy.kent.edu/Minigrants/Cinci/romanchart.htm
-
 module.exports = [
   {
     input: [[]],
