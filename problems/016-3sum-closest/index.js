@@ -1,5 +1,3 @@
-/* eslint no-param-reassign:0 */
-
 /**
  * https://leetcode.com/problems/3sum-closest/
  *
