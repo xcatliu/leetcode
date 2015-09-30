@@ -1,4 +1,4 @@
-var ListNode = require('../structures/ListNode');
+var ListNode = require('../../structures/ListNode');
 
 module.exports = [
   {

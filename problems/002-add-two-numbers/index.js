@@ -14,7 +14,7 @@
  * You should comment the following function to pass the leetcode tests.
  * Definition for singly-linked list.
  */
-var ListNode = require('../structures/ListNode');
+var ListNode = require('../../structures/ListNode');
 
 /**
  * @param {ListNode} l1
