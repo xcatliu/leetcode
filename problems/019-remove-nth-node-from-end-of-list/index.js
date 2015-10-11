@@ -18,12 +18,6 @@
  */
 
 /**
- * You should comment the following function to pass the leetcode tests.
- * Definition for singly-linked list.
- */
-var ListNode = require('../../structures/ListNode');
-
-/**
  * Definition for singly-linked list.
  * function ListNode(val) {
  *     this.val = val;
