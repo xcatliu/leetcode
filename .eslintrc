@@ -1,0 +1,13 @@
+{
+  "extends": "airbnb/legacy",
+  "rules": {
+    "no-unused-vars": 0,
+    "func-names": 0,
+    "no-console": 0,
+    "vars-on-top": 0,
+    "no-use-before-define": 0
+  },
+  "env": {
+    "mocha": true
+  }
+}
