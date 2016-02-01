@@ -4,7 +4,8 @@
   "description": "My LeetCode solutions using JavaScript.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "npm run lint && mocha",
+    "lint": "eslint . && echo 'ESLint Passed.\\n'"
   },
   "author": "xcatliu <xcatliu@gmail.com>",
   "license": "MIT",
