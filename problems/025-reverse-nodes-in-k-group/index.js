@@ -1,3 +1,5 @@
+/* eslint no-constant-condition:0 */
+
 /**
  * https://leetcode.com/problems/reverse-nodes-in-k-group/
  *
