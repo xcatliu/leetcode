@@ -11,10 +11,10 @@ ListNode.generateList = function (num) {
   var tmp;
   numbers.forEach(function (number, index) {
     if (index === 0) {
-      result = new ListNode(numbers[0]);
+      result = new ListNode(number);
       return;
     }
-    tmp = new ListNode(numbers[index]);
+    tmp = new ListNode(number);
     tmp.next = result;
     result = tmp;
   });
